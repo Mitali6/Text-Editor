@@ -1,10 +1,5 @@
 package text_editor;
 
-
-import java.awt.Toolkit;
-import java.awt.datatransfer.Clipboard;
-import java.awt.datatransfer.StringSelection;
-import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -13,20 +8,19 @@ import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import javax.swing.text.JTextComponent;
 
-public class NewJFrame extends javax.swing.JFrame {
+public class TextEditor extends javax.swing.JFrame {
     
-    JFileChooser chooser = new JFileChooser();
+	private static final long serialVersionUID = 1L;
+	
+	JFileChooser chooser = new JFileChooser();
     NewJFrame frame;
     String readfile1 = "";
     String filename = "";
     //NewJFrame frame = new NewJFrame();
     
-    public NewJFrame() {
+    public TextEditor() {
         initComponents();
         this.setLocationRelativeTo(null);   
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Text Files","txt");
@@ -59,11 +53,10 @@ public class NewJFrame extends javax.swing.JFrame {
         }
     }
 
-    @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jFileChooser1 = new javax.swing.JFileChooser();
+        new javax.swing.JFileChooser();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -329,7 +322,7 @@ public class NewJFrame extends javax.swing.JFrame {
             {
                 readfile1 += scan.nextLine() + "\n";
             }
-            NewJFrame frame = new NewJFrame();
+            TextEditor frame = new TextEditor();
             frame.show();
             frame.filename = chooser.getSelectedFile().getName();
             frame.jTextArea1.setText(readfile1);
@@ -378,7 +371,6 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JDesktopPane jDesktopPane1;
-    private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
